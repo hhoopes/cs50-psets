@@ -1,0 +1,11 @@
+0.  Pneumonoultramicroscopicsilicovolcanoconiosis is a lung disease often contracted by miners from breathing in microscopic particles of silicon dust from volcanos.
+1.  getrusage is a function to return resource usage, in terms of system time
+2.  16
+3.  Before and after are stored as 64 bit doubles,
+4.  Spellcheck relies on fgetc to obtain a single character at a time, an index to map the position of every letter in a potential word in an array. However, any error case (punctuation other than ', numbers, etc) advances the file pointer to the end of the word and resets the index, so when the file pointer starts at the next word, the index is wiped for a new word. A word has finished indexing when the index > 0 condition is met, but unlike the first loop to check for valid letters, it doesn't meet the condition for a valid letter because it's the end of a word. At this point, the word is saved and compared to the spell checker via the function that I will be writing. 
+5.  fscanf allows for a greater variety of characters, while fgetc only obtains one character at a time so we can check that single character knowing we're reading defined amounts and types of data
+6.  "const" refers to constant, or a value that we will never want to change. The program will prevent our own shoddy programming from inadventently changing those values
+7.  I created a trie using two data structures: 1 for the trie itself which has a root node associated with it and a word count variable. The trie node struct has an associated children node with array of [ALPHABET] and an is_word flag to designate the end of a word. Each node[i] contains either a pointer to children nodes or NULL, meaning that no words pass through that node. 
+8.  The average time the first time I ran the code successfully was on the average of 0.14 seconds in total.
+9.  I was intially satisfied with my time as it was similar to the staff time so I haven't yet refactored
+10. My bottleneck seems to be my load as it's the longest consistently. I know tries can do a lot with storing prefixes or suffixes (that is, the parts of a word that are replicated from word to word) and that this will cut down time loading and searching, but I haven't thought through yet how one would go about implementing this.
