@@ -1,0 +1,22 @@
+0. BMP 16M
+   JPG 16M
+   PNG 256T
+   GIF 256
+ 1. GIF
+ 2. Lossy files lose data after compression and subsequently uncompressed. Lossless data compression on the other hand loses data after the intial compression/uncompression so subsequent compressions gradually worsen the quality of the information.
+ 3. JPG
+ 4. Upon deleting a file in a FAT file system, the file in question is marked with a different letter to indicate that the file has been deleted. Second, the file's directory listing is moved to a section indicating it's available. But the actual information in the file is not actually removed at that point.
+ 5. I could truly delete files by using a program to overwrite the deleted files with patterns of data
+6. stdint.h defines the types of data structures based on whether they are signed or unsigned (positive or negative) and how many bytes they need. 
+7. Using a data structure definition such as uint8_t requests an unsigned block of memory of exactly 8 bytes from the system. Alternate data types such as "char" can have different sizes based on the system. It communicates exactly what is needed and how much space is required and and avoids confusion, bugs, or lack of portability.
+8. A BYTE is u8 bytes, WORD is 16, and both DWORD and LONG are 32, but DWORD requires a bit for the sign of the integer.
+9. the bftype of a bmp file (the first element of the bmp definition) is 19778.
+10. bfsize represents the siz of the whole bitmap file. bisize represents the size of the header.
+11. A negative bitmap height represents a bitmap whose information starts in the top, while positive number starts in the lower left.
+12. bcBitCount represents the number of bits per pixel.
+13. It could be a null value if the system weren't able to create the file because there wasn't enough hard drive space.
+14. Reading only one block is necessary because the block is the size of the info header, file header, or RGB triples by definition.
+15. Padding is 3 bytes.
+16. fseeks allows a user to skip a section of data from being written, or to offset where data is written from where it is read. In the copy program, it skips the number of bytes that was determined to be the padding because it can't be read like an RGBtriple can.
+17. Seek_cur designates to offset based on the pointer where the file is currently reading from, rather than from the beginning or end of the file.
+18. Rob Bowden, and maybe his cat
